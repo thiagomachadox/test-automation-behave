@@ -30,10 +30,10 @@ def step_impl(context):
 
         table = soup.find('table')
         row = table.tbody.find('tr')
-        team_name = row.text.strip()
+        team_name = row.text.strip() # TODO: extract only team_name
         row = f'{today_date} : 1st in {conference_name} conference: {team_name}'
 
-        # Save standings into txt
+        # Save result into txt
         file = open('results.txt', 'a')
-        file.write(row, '\n')
+        file.write('\n' + row)
         file.close()
